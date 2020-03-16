@@ -7,7 +7,7 @@
   "scripts": {
     "postinstall": "npm run build",
     "cover": "nyc npm test && nyc report --reporter=text-lcov | coveralls",
-    "build": "tsc -p tsconfig.json",
+    "build": "npx tsc -p tsconfig.json",
     "tslint": "tslint -c tslint.json src/**/*.ts",
     "test": "mocha src/**/*.spec.ts --recursive -c -r ts-node/register -R spec"
   },
