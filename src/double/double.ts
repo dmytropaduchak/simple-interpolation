@@ -1,38 +1,5 @@
-import { single } from "./single";
-
-/** Point Interface */
-interface Point {
-  x: number;
-  y: number;
-  z: number;
-}
-
-/** Single Interface */
-interface Single {
-  x: number;
-  y: number;
-}
-
-/** Params Interface */
-interface Params {}
-
-/** X Interface extends Params Interface */
-interface X extends Params {
-  y: number;
-  z: number;
-}
-
-/** Y Interface extends Params Interface */
-interface Y {
-  x: number;
-  z: number;
-}
-
-/** Z Interface extends Params Interface */
-interface Z {
-  x: number;
-  y: number;
-}
+import { single } from '../single';
+import { Point, Single, X, Y, Z } from './double.definition';
 
 /**
  * Format matrix points to simple structure points
@@ -40,17 +7,17 @@ interface Z {
  * @param {string} points interpolation matrix
  * @return {array} formatted points
  */
-function format(params: X | Y | Z, points: Point[]): [number, number[][]] {
-  if ("x" in params) {
+export const format = (params: X | Y | Z, points: Point[]): [number, number[][]] => {
+  if ('x' in params) {
     return [params.x, points.map((i: Point): number[] => [i.x, i.y, i.z])];
   }
 
-  if ("y" in params) {
+  if ('y' in params) {
     return [params.y, points.map((i: Point): number[] => [i.y, i.x, i.z])];
   }
 
   throw new Error("Can't calculate double interpolation");
-}
+};
 
 /**
  * Double interpolation store
@@ -63,7 +30,7 @@ export function double(points: Point[]): (params: X | Y | Z) => number {
   }
 
   return (params: X | Y | Z): number => {
-    if ("x" in params && "y" in params) {
+    if ('x' in params && 'y' in params) {
       const sortX1 = (a: Point, b: Point): number => b.x - a.x;
       const findX1 = (i: Point): boolean => i.x <= params.x;
 
@@ -123,7 +90,7 @@ export function double(points: Point[]): (params: X | Y | Z) => number {
       return p1 + p2 + p3 + p4;
     }
 
-    if ("z" in params) {
+    if ('z' in params) {
       const [c, p] = format(params, points);
 
       const sortMin = (a: number[], b: number[]): number => b[0] - a[0];
@@ -143,8 +110,10 @@ export function double(points: Point[]): (params: X | Y | Z) => number {
       const p1 = p.filter((i: number[]): boolean => i[0] === min[0]);
       const p2 = p.filter((i: number[]): boolean => i[0] === max[0]);
 
-      const map = (curr: number[], i: number): Single =>
-        ({ x: (((((c - curr[0]) * (p1[i][2] - curr[2])) / (p1[i][0] - curr[0])) || 0) + curr[2]), y: curr[1] });
+      const map = (curr: number[], i: number): Single => ({
+        x: (((c - curr[0]) * (p1[i][2] - curr[2])) / (p1[i][0] - curr[0]) || 0) + curr[2],
+        y: curr[1],
+      });
 
       return single(p2.map(map))({ x: params.z });
     }

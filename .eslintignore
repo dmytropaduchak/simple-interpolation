@@ -1,5 +1,5 @@
-# Compiled files
-/dist
+# Compiled output files
+/dist/*
 /node_modules
 
 # IDE's files
@@ -7,7 +7,6 @@
 
 # Report files
 /report
-/coverage
 
 # Log files
 *.log

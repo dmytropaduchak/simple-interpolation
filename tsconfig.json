@@ -1,14 +1,29 @@
 {
   "compilerOptions": {
-    "lib": ["dom", "esnext"],
-    "target": "es5",
     "module": "commonjs",
-    "declaration": true,
+    "moduleResolution": "node",
+    "target": "es6",
     "outDir": "dist",
-    "strict": true
+    "baseUrl": ".",
+    "noImplicitAny": true,
+    "sourceMap": true,
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+    "declaration": true,
+    "skipLibCheck": true
   },
+  "lib": [
+    "dom",
+    "esnext",
+    "esnext.asynciterable"
+  ],
+  "include": [
+    "src/**/*.ts"
+  ],
   "exclude": [
-    "src/**/*spec.ts",
-    "dist"
+    "dist",
+    "node_modules",
+    "**/*.spec.ts",
+    "**/*.mock.ts"
   ]
 }

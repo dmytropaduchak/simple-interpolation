@@ -6,15 +6,15 @@
 
 A simple interpolation module that construct new data points within the range of a discrete set of known data points, [example](https://dmytropaduchak.github.io/simple-interpolation).
 
-## Module Installation 
+## Installation 
 
-You can install this module using NPM:
+You can install this package using NPM:
 
 ```sh
-npm install simple-interpolation --save
+npm i simple-interpolation --save
 ```
 
-## Module Single Interpolation
+## Single Interpolation
 
 ```
   Simple Schema of Single interpolation
@@ -67,6 +67,7 @@ Or you can use TypeScript
 
 ```typescript
 import { single } from "simple-interpolation";
+// import { single, Point, X, Y } from "simple-interpolation/single";
 
 const points = [{ x: 1, y: 1}, { x: 2, y: 2 }];
 
@@ -76,7 +77,7 @@ f({ x: 1.5 }); // y -> 1.5
 f({ y: 1.5 }); // x -> 1.5
 ```
 
-## Module Double Interpolation
+## Double Interpolation
 
 ```
   Simple Schema of Double interpolation
@@ -134,6 +135,7 @@ Or you can use TypeScript
 
 ```typescript
 import { double } from "simple-interpolation";
+// import { double, Point, X, Y , Z } from "simple-interpolation/double";
 
 const points = [{ x: 1, y: 1, z: 11 }, { x: 2, y: 1, z: 12 }, { x: 1, y: 2, z: 21 }, { x: 2, y: 2, z: 22 }];
 
@@ -144,18 +146,42 @@ f({ x: 1.5, z: 16.5 }); // y -> 1.5
 f({ y: 1.5, z: 16.5 }); // x -> 1.5
 ```
 
-## Module Test 
+## Unit testing
 
-For run module tests execute
+For run unit tests, use:
 
-```sh
+```
 npm run test
 ```
 
-## Module License
+All unit test report you can find at `report/` folder.
+
+For run test at watch mode, use:
+
+```
+npm run test:dev
+```
+
+
+## Linting
+
+For check eslint rules, use:
+
+```
+npm run lint
+```
+
+For auto fix all eslint bugs, use:
+
+```
+npm run lint:fix
+```
+
+
+## License
 Except where noted otherwise, files are licensed under the MIT License.
 
-## More Information
+## Information
 
 - [Single or Linear interpolation](https://en.wikipedia.org/wiki/Linear_interpolation).
 - [Double or Bilinea interpolation](https://en.wikipedia.org/wiki/Bilinear_interpolation).
