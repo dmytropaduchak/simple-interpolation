@@ -1,7 +1,6 @@
 [![Build Status](https://travis-ci.org/dmytropaduchak/simple-interpolation.svg?branch=master)](https://travis-ci.org/dmytropaduchak/simple-interpolation)
 [![Coverage Status](https://coveralls.io/repos/github/dmytropaduchak/simple-interpolation/badge.svg?branch=master)](https://coveralls.io/github/dmytropaduchak/simple-interpolation?branch=master)
 [![NPM Version](https://badge.fury.io/js/simple-interpolation.svg)](http://badge.fury.io/js/simple-interpolation)
-[![Open Issues](https://img.shields.io/github/issues-raw/tterb/PlayMusic.svg?maxAge=25000)](https://github.com/dmytropaduchak/simple-interpolation/issues)  
 [![Dependecy Status](https://david-dm.org/tterb/Hyde.svg)](https://github.com/dmytropaduchak/simple-interpolation)  
 [![DEV Dependency Status](https://david-dm.org/tterb/Hyde/dev-status.svg)](https://github.com/dmytropaduchak/simple-interpolation?type=dev)  
 
