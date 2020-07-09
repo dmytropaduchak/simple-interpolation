@@ -1,5 +1,4 @@
 # Compiled files
-/dist
 /node_modules
 
 # IDE's files
@@ -7,7 +6,6 @@
 
 # Report files
 /report
-
 # Log files
 *.log
 npm-debug.log*
