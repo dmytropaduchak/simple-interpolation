@@ -68,7 +68,7 @@
     ]
   },
   "dependencies": {
-    "simple-bilinear-interpolation": "^1.0.4",
+    "simple-bilinear-interpolation": "^1.0.5",
     "simple-linear-interpolation": "^1.0.5"
   }
 }
