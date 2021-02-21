@@ -1,6 +1,6 @@
 {
   "name": "simple-interpolation",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "A simple interpolation module that construct new data points within the range of a discrete set of known data points",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -68,7 +68,7 @@
     ]
   },
   "dependencies": {
-    "simple-bilinear-interpolation": "^1.0.5",
-    "simple-linear-interpolation": "^1.0.5"
+    "simple-bilinear-interpolation": "^1.0.6",
+    "simple-linear-interpolation": "^1.0.6"
   }
 }
